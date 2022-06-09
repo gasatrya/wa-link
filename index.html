@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WhatsApp Link Generator Free!</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/css/bootstrap.min.css"
+      integrity="sha512-T584yQ/tdRR5QwOpfvDfVQUidzfgc2339Lc8uBDtcp/wYu80d7jwBgAxbyMh0a9YM9F8N3tdErpFI8iaGx6x5g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="app.css" />
+  </head>
+
+  <body>
+    <div class="whatsapp">
+      <div class="whatsapp__wrapper">
+        <header class="whatsapp__header">
+          <h1 class="h3 text-center">WhatsApp Link Generator</h1>
+          <p class="text-center">
+            Quickly generate a personalized WhatsApp link with a predefined
+            message and share it with your audience on your Social Networks!
+          </p>
+        </header>
+
+        <form class="whatsapp__form">
+          <div class="form-group">
+            <label for="wa_number">Phone Number with Country Code</label>
+            <input
+              type="text"
+              class="form-control"
+              id="wa_number"
+              placeholder="+62..."
+            />
+            <small id="wa_number_invalid" class="invalid"></small>
+          </div>
+          <div class="form-group">
+            <label for="wa_msg">Predefined Message</label>
+            <textarea
+              class="form-control"
+              id="wa_msg"
+              rows="5"
+              placeholder="Hi there, I want to know more about your product."
+              aria-required="true"
+            ></textarea>
+            <small id="wa_msg_invalid" class="invalid"></small>
+          </div>
+          <button type="submit" class="btn btn-primary" id="wa_btn">
+            Get Link
+          </button>
+
+          <div class="form-group mt-3">
+            <textarea
+              class="form-control"
+              id="wa_link"
+              rows="3"
+              readonly
+            ></textarea>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/js/bootstrap.min.js"
+    integrity="sha512-UR25UO94eTnCVwjbXozyeVd6ZqpaAE9naiEUBK/A+QDbfSTQFhPGj5lOR6d8tsgbBk84Ggb5A3EkjsOgPRPcKA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  <script src="app.js"></script>
+</html>
