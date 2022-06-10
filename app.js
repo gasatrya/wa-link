@@ -1,64 +1,77 @@
-(function ($) {
-  $(function () {
-    const btn = $('#wa_btn');
-    const numberEror = $('#wa_number_invalid');
-    const msgEror = $('#wa_msg_invalid');
-    const waLink = $('#wa_link');
+(() => {
+  // Set up variables.
+  const generateBtn = document.getElementById('generate_link');
+  const numberInvalid = document.getElementById('number_invalid');
+  const messageInvalid = document.getElementById('message_invalid');
+  const generatedLink = document.getElementById('generated_link');
 
-    btn.on('click', (e) => {
-      e.preventDefault();
+  // Button click event.
+  generateBtn.addEventListener('click', (e) => {
+    e.preventDefault();
 
-      // Set up variables.
-      const number = $('#wa_number').val();
-      const msg = $('#wa_msg').val();
-      let predefined = 'https://api.whatsapp.com/send?phone=' + number;
+    // Set up link generator variables.
+    const number = document.getElementById('number');
+    const message = document.getElementById('message');
+    let predefinedMessage =
+      'https://api.whatsapp.com/send?phone=' + number.value;
 
-      if (number === '') {
-        numberEror.text('Phone number is empty.');
-        $('#wa_number').focus();
-        setTimeout(() => {
-          numberEror.text('');
-        }, 2000);
-        return false;
+    // Check if the number is not empty.
+    if (number.value === '') {
+      numberInvalid.textContent = 'Phone number is empty.';
+      number.classList.add('is-invalid');
+      number.focus();
+    } else {
+      numberInvalid.textContent = '';
+
+      if (validatePhone(number.value) === false) {
+        numberInvalid.textContent = 'Please check again your phone number.';
+        number.focus();
       } else {
-        if (validatePhone(number) === false) {
-          numberEror.text('Please check again the phone number.');
-          $('#wa_number').focus();
-          setTimeout(() => {
-            numberEror.text('');
-          }, 2000);
-          return false;
-        }
+        numberInvalid.textContent = '';
+        number.classList.remove('is-invalid');
+        number.classList.add('is-valid');
       }
-
-      if (msg === '') {
-        msgEror.text('Predefined message is empty.');
-        $('#wa_msg').focus();
-        setTimeout(() => {
-          msgEror.text('');
-        }, 2000);
-        return false;
-      }
-
-      predefined += '&text=' + encodeURIComponent(msg);
-
-      waLink.text(predefined);
-    });
-
-    // Phone validation
-    function validatePhone(number) {
-      const phoneRegex = /^[+]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$/g;
-      return phoneRegex.test(number);
     }
 
-    // Escape html tag
-    function escapeHtml(unsafe) {
-      return unsafe
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;')
-        .replace(/'/g, '&#039;');
+    // Check if message is not empty.
+    if (message.value === '') {
+      messageInvalid.textContent = 'Predefined message is empty.';
+      message.classList.add('is-invalid');
+      message.focus();
+    } else {
+      messageInvalid.textContent = '';
+      message.classList.remove('is-invalid');
+      message.classList.add('is-valid');
     }
+
+    // Stop event.
+    if ((number.value && message.value) === '') {
+      number.focus();
+      return false;
+    }
+
+    // Set up predefined message.
+    predefinedMessage +=
+      '&text=' + encodeURIComponent(escapeHtml(message.value));
+
+    // Show the generated link.
+    generatedLink.textContent = predefinedMessage;
   });
-})(jQuery);
+
+  // Phone validation
+  function validatePhone(num) {
+    const phoneRegex = /^[+]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$/g;
+    return phoneRegex.test(num);
+  }
+
+  // Escape html tag
+  // https://stackoverflow.com/a/6234804
+  function escapeHtml(unsafe) {
+    return unsafe
+      .replaceAll('&', '&amp;')
+      .replaceAll('<', '&lt;')
+      .replaceAll('>', '&gt;')
+      .replaceAll('"', '&quot;')
+      .replaceAll("'", '&#039;');
+  }
+})();

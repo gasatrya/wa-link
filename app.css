@@ -9,7 +9,15 @@ body {
   margin: auto;
 }
 
+.h3 {
+  font-weight: 700;
+}
+
 .invalid {
   color: #d54552;
   font-weight: 700;
+}
+
+textarea {
+  resize: none;
 }
