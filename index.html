@@ -1,71 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WhatsApp Link Generator Free!</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/css/bootstrap.min.css"
-      integrity="sha512-T584yQ/tdRR5QwOpfvDfVQUidzfgc2339Lc8uBDtcp/wYu80d7jwBgAxbyMh0a9YM9F8N3tdErpFI8iaGx6x5g=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="app.css" />
-  </head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>WhatsApp Link Generator Free!</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/css/bootstrap.min.css"
+            integrity="sha512-T584yQ/tdRR5QwOpfvDfVQUidzfgc2339Lc8uBDtcp/wYu80d7jwBgAxbyMh0a9YM9F8N3tdErpFI8iaGx6x5g=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <link rel="stylesheet" href="src/app.css" />
+    </head>
 
-  <body class="whatsapp">
-    <div class="whatsapp__wrapper">
-      <header class="whatsapp__header">
-        <h1 class="h3 text-center">WhatsApp Link Generator</h1>
-        <p class="text-center">
-          Quickly generate a personalized WhatsApp link with a predefined
-          message and share it with your audience on your Social Networks!
-        </p>
-      </header>
+    <body class="whatsapp">
+        <div class="whatsapp__wrapper">
+            <header class="whatsapp__header">
+                <h1 class="h3 text-center">WhatsApp Link Generator</h1>
+                <p class="text-center">
+                    Quickly generate a personalized WhatsApp link with a predefined message and share it with your
+                    audience on your Social Networks!
+                </p>
+            </header>
 
-      <form class="whatsapp__form" novalidate>
-        <div class="form-group">
-          <label for="number">Phone Number</label>
-          <input
-            type="text"
-            class="form-control"
-            id="number"
-            placeholder="+62..."
-            aria-required="true"
-            required
-          />
-          <small id="number_invalid" class="invalid"></small>
+            <form class="whatsapp__form" novalidate>
+                <div class="form-group">
+                    <label for="number">Phone Number</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="number"
+                        placeholder="+62..."
+                        aria-required="true"
+                        required
+                    />
+                    <small id="number_invalid" class="invalid"></small>
+                </div>
+                <div class="form-group">
+                    <label for="message">Predefined Message</label>
+                    <textarea
+                        class="form-control"
+                        id="message"
+                        rows="5"
+                        placeholder="Hi there, I want to know more about your product."
+                        aria-required="true"
+                        required
+                    ></textarea>
+                    <small id="message_invalid" class="invalid"></small>
+                </div>
+                <button type="submit" class="btn btn-primary" id="generate_link">Get Link</button>
+                <button type="submit" class="btn btn-danger" id="clear">Clear</button>
+                <button type="submit" class="btn btn-info" id="copy">Copy Link</button>
+
+                <div class="form-group mt-3">
+                    <textarea class="form-control" id="generated_link" rows="3" readonly></textarea>
+                </div>
+            </form>
         </div>
-        <div class="form-group">
-          <label for="message">Predefined Message</label>
-          <textarea
-            class="form-control"
-            id="message"
-            rows="5"
-            placeholder="Hi there, I want to know more about your product."
-            aria-required="true"
-            required
-          ></textarea>
-          <small id="message_invalid" class="invalid"></small>
-        </div>
-        <button type="submit" class="btn btn-primary" id="generate_link">
-          Get Link
-        </button>
+    </body>
 
-        <div class="form-group mt-3">
-          <textarea
-            class="form-control"
-            id="generated_link"
-            rows="3"
-            readonly
-          ></textarea>
-        </div>
-      </form>
-    </div>
-  </body>
-
-  <script src="app.js"></script>
-  <!-- <script src="app-jquery.js"></script> -->
+    <script src="src/app.js"></script>
 </html>

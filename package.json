@@ -1,0 +1,22 @@
+{
+  "name": "wa-link",
+  "version": "1.0.0",
+  "description": "WhatsApp link generator",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/satrya/wa-chat.git"
+  },
+  "author": "Satrya",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/satrya/wa-chat/issues"
+  },
+  "homepage": "https://github.com/satrya/wa-chat#readme",
+  "devDependencies": {
+    "eslint": "^8.17.0"
+  }
+}
