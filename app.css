@@ -1,0 +1,96 @@
+:root {
+  --accent-color: #128c7e;
+  --white-color: #fff;
+  --font-family: 'Inter', sans-serif;
+}
+
+body {
+  background-color: #f5f5f5;
+  font-family: var(--font-family);
+}
+
+.whatsapp__header {
+  background-color: var(--accent-color);
+  color: var(--white-color);
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.whatsapp__github {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.whatsapp__github a {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  color: var(--white-color);
+  font-size: 14px;
+}
+
+.whatsapp__github a:not(:last-of-type) {
+  margin-right: 14px;
+}
+
+.whatsapp__github svg {
+  width: 24px;
+  margin-right: 5px;
+}
+
+.whatsapp__wrapper {
+  width: 100%;
+  max-width: 800px;
+  padding: 15px;
+  margin: auto;
+}
+
+.h3 {
+  font-weight: 700;
+}
+
+.invalid {
+  color: #d54552;
+  font-weight: 700;
+}
+
+textarea {
+  resize: none;
+}
+
+label {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.btn {
+  font-size: 14px;
+}
+
+.btn-primary {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.btn-primary:hover,
+.btn-primary:not(:disabled):not(.disabled):active,
+.btn-primary:focus {
+  background-color: rgb(18, 140, 126, 0.8);
+  border-color: var(--accent-color);
+}
+
+.btn-danger {
+  background-color: transparent;
+  color: #dc3545;
+}
+
+.btn-copy {
+  background-color: transparent;
+  color: var(--accent-color);
+}
+
+.btn-clear,
+.btn-copy {
+  display: none;
+}

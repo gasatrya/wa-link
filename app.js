@@ -2,7 +2,7 @@
   'use strict';
 
   // Set up variables.
-  const generateBtn = document.getElementById('generate_link');
+  const generateBtn = document.getElementById('generate');
   const numberInvalid = document.getElementById('number_invalid');
   const messageInvalid = document.getElementById('message_invalid');
   const generatedLink = document.getElementById('generated_link');
@@ -15,8 +15,15 @@
   generateBtn.addEventListener('click', e => {
     e.preventDefault();
 
+    // Trim spaces
+    const trimmedNumber = number.value.trim();
+    const trimmedMessage = message.value.trim();
+
+    number.value = trimmedNumber;
+    message.value = trimmedMessage;
+
     // Set up predefiend message.
-    let predefinedMessage = 'https://api.whatsapp.com/send?phone=' + number.value;
+    let predefinedMessage = 'https://api.whatsapp.com/send?phone=' + trimmedNumber;
 
     // Check if the number is not empty.
     if (number.value === '') {
@@ -54,12 +61,12 @@
     }
 
     // Set up predefined message.
-    predefinedMessage += '&text=' + encodeURIComponent(escapeHtml(message.value));
+    predefinedMessage += '&text=' + encodeURIComponent(escapeHtml(trimmedMessage));
 
     // Show the generated link.
     generatedLink.value = predefinedMessage;
-
-    // return false;
+    clearForm.style.display = 'inline-block';
+    copyLink.style.display = 'inline-block';
   });
 
   // Clear button
@@ -76,6 +83,10 @@
 
     // Clear link field
     generatedLink.value = '';
+
+    // Hide clear & copy button
+    clearForm.style.display = 'none';
+    copyLink.style.display = 'none';
   });
 
   // Validate input

@@ -1,5 +1,5 @@
 {
-  "name": "wa-link",
+  "name": "wa-chat",
   "version": "1.0.0",
   "description": "WhatsApp link generator",
   "main": "app.js",
