@@ -12,14 +12,38 @@ body {
 .whatsapp__header {
   background-color: var(--accent-color);
   color: var(--white-color);
-  min-height: 50px;
+  height: 80px;
   display: flex;
   align-items: center;
+  text-align: center;
+}
+
+@media (min-width: 567px) {
+  .whatsapp__header {
+    height: 50px;
+    text-align: left;
+  }
+}
+
+.whatsapp__logo {
+  margin-bottom: 10px;
+}
+
+@media (min-width: 567px) {
+  .whatsapp__logo {
+    margin-bottom: 0;
+  }
 }
 
 .whatsapp__github {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+}
+
+@media (min-width: 567px) {
+  .whatsapp__github {
+    justify-content: flex-end;
+  }
 }
 
 .whatsapp__github a {
