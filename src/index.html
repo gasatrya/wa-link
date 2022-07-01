@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>WhatsApp Link Generator Free!</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,600;0,700;0,900;1,400&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+
+    <body class="whatsapp">
+        <header class="container my-5">
+            <div class="text-center">
+                <a
+                    class="me-4 text-decoration-none text-light"
+                    href="https://github.com/gasatrya/wa-link/"
+                    target="_blank"
+                >
+                    Source Code</a
+                >
+
+                <a class="text-decoration-none text-light" href="https://gasatrya.dev/" target="_blank">
+                    Project by Gasatrya
+                </a>
+            </div>
+        </header>
+
+        <div class="container">
+            <header class="w-75 mx-auto my-5">
+                <h1 class="display-4 text-center fw-bold text-light">WhatsApp Link Generator</h1>
+                <p class="text-center fs-5 text-light text-opacity-75">
+                    Quickly generate a personalized WhatsApp link with a predefined message and you can share it with
+                    your audience on your Social Media!
+                </p>
+            </header>
+
+            <form class="container my-5">
+                <div class="row">
+                    <div class="col-md-6 mb-4 mb-md-0">
+                        <div class="mb-3">
+                            <label for="number" class="form-label fw-semibold">Phone Number</label>
+                            <input
+                                type="text"
+                                class="form-control text-light"
+                                id="number"
+                                placeholder="+628xxxxxxx"
+                                aria-required="true"
+                                required
+                            />
+                            <small id="number_invalid" class="invalid"></small>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label fw-semibold">Predefined Message</label>
+                            <textarea
+                                class="form-control text-light"
+                                id="message"
+                                rows="5"
+                                placeholder="Hi there, I want to know more about your product."
+                                aria-required="true"
+                                required
+                            ></textarea>
+                            <small id="message_invalid" class="invalid"></small>
+                        </div>
+                        <button type="submit" class="btn btn-custom fw-semibold me-2" id="generate">Get Link</button>
+                        <button type="submit" class="btn btn-danger fw-semibold d-none" id="clear">Clear</button>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label for="generated_link" class="form-label fw-semibold">Generated Link</label>
+                            <textarea class="form-control text-light" id="generated_link" rows="8" readonly></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-custom fw-semibold d-none" id="copy">Copy Link</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
