@@ -25,3 +25,7 @@ npm run build
 ```
 npm run lint
 ```
+
+### Thanks to:
+
+- Webpack starter: [https://github.com/wbkd/webpack-starter](https://github.com/wbkd/webpack-starter)
